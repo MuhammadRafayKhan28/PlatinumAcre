@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "711571082778",
+    "firebase_url": "https://platzameen-default-rtdb.firebaseio.com",
+    "project_id": "platzameen",
+    "storage_bucket": "platzameen.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711571082778:android:271662baa33845a01acba3",
+        "android_client_info": {
+          "package_name": "com.platinumacre.realestateapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711571082778-ri762rvl900sh62dpbecvcbvjk4g8c33.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.platinumacre.realestateapp",
+            "certificate_hash": "ce13942b8085bdadaf572835c84c4576aed079df"
+          }
+        },
+        {
+          "client_id": "711571082778-889rv3hrvc2livjv2aoll7pm8iafsso0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0UrLTwrh_fO5eS0FcBVq4NC7Wyz_JYeg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711571082778-889rv3hrvc2livjv2aoll7pm8iafsso0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

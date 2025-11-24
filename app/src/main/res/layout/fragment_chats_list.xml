@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragments.ChatsListFragment">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/toolbar_bg02">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/searchCv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            app:cardCornerRadius="20dp"
+            app:contentPadding="5dp"
+            app:strokeWidth="0dp">
+
+            <EditText
+                android:id="@+id/searchEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/search_gray"
+                android:drawablePadding="5dp"
+                android:hint="Search..."
+                android:padding="8dp"
+                android:textSize="12sp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+    <!--RecyclerView: Show chats of currently logged-in user-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatsRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_chats"/>
+
+</LinearLayout>

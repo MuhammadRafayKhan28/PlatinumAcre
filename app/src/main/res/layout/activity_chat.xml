@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ChatActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/toolbar_bg01"
+        android:paddingTop="20dp">
+
+        <!--ImageButton: Click to go-back-->
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/back_white" />
+
+        <!--ShapeableImageView: Receipt Profile Image-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/toolbarProfileIv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/toolbarBackBtn"
+            android:background="@color/colorGray01"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ImageStyle_Circle"
+            tools:src="@tools:sample/avatars" />
+
+        <!--TextView: Toolbar Title (Receipt Full Name)-->
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.Material3.LabelLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/toolbarProfileIv"
+            android:textColor="?attr/colorOnPrimary"
+            tools:text="@tools:sample/full_names" />
+
+    </RelativeLayout>
+
+    <!--RecyclerView: Show Chat/Messages-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/view1"
+        android:layout_below="@id/toolbarRl"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:stackFromEnd="true"
+        tools:listitem="@layout/row_chat_left" />
+
+    <!--View: To make Chat Input UI look separate from other UI-->
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/chatInputRl"
+        android:background="@color/colorGray02" />
+
+    <RelativeLayout
+        android:id="@+id/chatInputRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp">
+
+        <!--EditText: Input message to send-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/messageTil"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_toStartOf="@+id/attachFab"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp">
+
+            <EditText
+                android:id="@+id/messageEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/attachFab"
+                android:hint="Start Typing..."
+                android:inputType="textMultiLine|textCapSentences" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--FloatingActionButton: Show option to pick image from Camera/Gallery-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/attachFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/sendBtn"
+            android:src="@drawable/image_gray"
+            app:elevation="0dp"
+            app:fabCustomSize="40dp"
+            app:shapeAppearanceOverlay="@style/ImageStyle_Circle"
+            app:tint="@color/white" />
+
+        <!--FloatingActionButton: Send text message-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/sendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/send_gray"
+            app:elevation="0dp"
+            app:fabCustomSize="40dp"
+            app:shapeAppearanceOverlay="@style/ImageStyle_Circle"
+            app:tint="@color/white" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

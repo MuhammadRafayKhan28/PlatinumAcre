@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    tools:context=".activities.LoginEmailActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:paddingTop="20dp"
+        android:background="@drawable/toolbar_bg02">
+
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/back_white"
+            android:tint="?attr/colorOnPrimary" />
+
+        <!--ShapeableImageView: Just to show a static image (ic_person_white) from drawable-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileIv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="15dp"
+            android:background="?attr/colorOnPrimary"
+            android:src="@drawable/person_black"
+            app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+
+        <!--TextView: Just to show a labeled text-->
+        <TextView
+            android:id="@+id/loginLabelTv"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profileIv"
+            android:layout_centerHorizontal="true"
+            android:text="Login To Your Account"
+            android:textColor="?attr/colorOnPrimary" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarRl"
+        android:padding="10dp">
+
+        <!--TextInputLayout: Input account email for login-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailTil"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Email"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:startIconDrawable="@drawable/email_white">
+
+            <EditText
+                android:id="@+id/emailEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--TextInputLayout: Input account password for login-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordTil"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailTil"
+            android:layout_marginTop="4dp"
+            android:hint="Password"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@drawable/lock_white">
+
+            <EditText
+                android:id="@+id/passwordEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--TextView: Click to goto RegisterEmailActivity-->
+        <TextView
+            android:id="@+id/noAccountTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/passwordTil"
+            android:paddingVertical="5dp"
+            android:text="@string/not_have_account_register" />
+
+        <!--TextView: Click to goto ForgotPasswordActivity-->
+        <TextView
+            android:id="@+id/forgotPasswordTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/passwordTil"
+            android:layout_alignParentEnd="true"
+            android:paddingVertical="5dp"
+            android:text="@string/forgot_password_recover" />
+
+        <!--MaterialButton: Click to login user-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:minHeight="@dimen/m_button_height"
+            android:text="Login"
+            app:icon="@drawable/key_white" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

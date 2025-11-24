@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">PlatinumAcre</string>
+
+
+    <string name="not_have_account_register">No Account? <b>Register</b></string>
+    <string name="already_have_account_login">Have Account? <b>Login</b></string>
+    <string name="didt_receive_otp_resend">Didn\'t receive OTP? <b>Resend</b></string>
+    <string name="forgot_password_recover">Forgot Password? <b>Recover</b></string>
+    <string name="price_symbol">$</string>
+    <string name="category_homes">Homes</string>
+    <string name="category_plots">Plots</string>
+    <string name="category_commercial">Commercial</string>
+    <string name="purpose_sell">Sell</string>
+    <string name="purpose_rent">Rent</string>
+
+    <!--<string name="my_maps_api_key">AIzaSyC8gyiK1r6-ti9cMPFsPsKnB5sPpLNBUTI</string>-->
+    <string name="my_maps_api_key">AIzaSyCWE1Vn6GjXkpEBxL8fsa3ZQcBLqyero4I</string>
+</resources>

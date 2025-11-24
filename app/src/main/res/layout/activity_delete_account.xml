@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DeleteAccountActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:background="@drawable/toolbar_bg02">
+
+        <!--ImageButton: Click to go-back-->
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/back_white"
+            android:tint="?attr/colorOnPrimary" />
+
+        <!--TextView: Toolbar Title-->
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Delete Account"
+            android:textColor="@color/white" />
+
+        <!--ShapeableImageView: Just to show a static image (ic_person_white) from drawable-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileIv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/toolbarTitleTv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="10dp"
+            android:background="?attr/colorOnPrimary"
+            android:src="@drawable/person_black"
+            app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+
+        <!--TextView: Just to show a message text-->
+        <TextView
+            android:id="@+id/toolbarDescriptionTv"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profileIv"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:text="Are you sure you want to delete your account including data? \nYou will not be able to access your account again! \nThis action can't be undone. "
+            android:textColor="?attr/colorOnPrimary" />
+
+    </RelativeLayout>
+
+
+    <!--MaterialButton: Click to send password recovery instructions-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:minHeight="@dimen/m_button_height"
+        android:text="Confirm Delete"
+        app:icon="@drawable/block_gray" />
+
+</RelativeLayout>

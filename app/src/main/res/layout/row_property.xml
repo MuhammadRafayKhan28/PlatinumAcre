@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="10dp"
+    app:strokeWidth="0.5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Property Image, Favorite-->
+        <RelativeLayout
+            android:id="@+id/profileRl"
+            android:layout_width="110dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="10dp">
+
+            <!--Property Image: There will be multiple we will show first-->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/propertyIv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@color/colorPrimary"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <!--FloatingActionButton: Add/Remove property from/to favorite-->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/favoriteBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:alpha=".8"
+                android:src="@drawable/fav_no_black"
+                app:backgroundTint="?attr/colorPrimary"
+                app:fabCustomSize="40dp"
+                app:tint="@color/white" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/soldCv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                app:cardBackgroundColor="?attr/colorPrimaryDark"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="5dp"
+                app:cardElevation="2dp"
+                app:shapeAppearanceOverlay="@style/ImageStyle_Circle"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="4dp"
+                    android:text="Sold"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/titleTv"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/profileRl"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="@tools:sample/lorem[10]" />
+
+        <TextView
+            android:id="@+id/descriptionTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleTv"
+            android:layout_toEndOf="@id/profileRl"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="@tools:sample/lorem[10]" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/purposeCv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/descriptionTv"
+            android:layout_marginVertical="5dp"
+            android:layout_toEndOf="@id/profileRl"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:id="@+id/purposeTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="5dp"
+                android:textSize="8sp"
+                tools:text="@tools:sample/lorem[1]" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/categoryCv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/descriptionTv"
+            android:layout_marginVertical="5dp"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@id/purposeCv"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:id="@+id/categoryTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="5dp"
+                android:textSize="8sp"
+                tools:text="@tools:sample/lorem[1]" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/subcategoryCv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/descriptionTv"
+            android:layout_marginVertical="5dp"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@id/categoryCv"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:id="@+id/subcategoryTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="5dp"
+                android:textSize="8sp"
+                tools:text="@tools:sample/lorem[1]" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/addressTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subcategoryCv"
+            android:layout_toEndOf="@id/profileRl"
+            android:drawableStart="@drawable/location_gray"
+            android:drawableTint="@color/colorPrimaryDark"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            tools:text="@tools:sample/lorem[10]" />
+
+        <TextView
+            android:id="@+id/dateTv"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addressTv"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/profileRl"
+            android:drawableStart="@drawable/time_gray"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <TextView
+            android:id="@+id/priceSymbolTv"
+            style="@style/TextAppearance.Material3.LabelLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addressTv"
+            android:layout_marginTop="8dp"
+            android:layout_toStartOf="@+id/priceTv"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:text="@string/price_symbol" />
+
+        <TextView
+            android:id="@+id/priceTv"
+            style="@style/TextAppearance.Material3.LabelLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addressTv"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            tools:text="1500" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

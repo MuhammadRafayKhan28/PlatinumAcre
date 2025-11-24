@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.HomeFragment">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/toolbar_bg02">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/searchCv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            app:cardCornerRadius="20dp"
+            app:contentPadding="5dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/searchEt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:drawableStart="@drawable/search_gray"
+                    android:drawablePadding="5dp"
+                    android:hint="Search..."
+                    android:padding="8dp"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginEnd="8dp"
+                    app:dividerColor="@color/colorGray02" />
+
+                <TextView
+                    android:id="@+id/cityTv"
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:drawableEnd="@drawable/next_white"
+                    android:drawableTint="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:text="Choose Location" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp">
+
+        <TextView
+            android:id="@+id/filterSelectedTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Showing All" />
+
+        <TextView
+            android:id="@+id/filterTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_sort_white"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/colorGray01"
+            android:gravity="center_vertical"
+            android:text="Filter" />
+
+    </LinearLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="8dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/propertiesRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_property" />
+
+</LinearLayout>
